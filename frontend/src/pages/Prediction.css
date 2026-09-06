@@ -1,0 +1,130 @@
+.prediction-container {
+  max-width: 1080px;
+}
+
+.prediction-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.prediction-form-card {
+  padding: 32px;
+}
+
+.prediction-form-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 6px;
+}
+
+.prediction-form-desc {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+.prediction-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-icon {
+  margin-right: 6px;
+  vertical-align: -2px;
+  color: #0ea5e9;
+}
+
+.field-error {
+  display: block;
+  font-size: 13px;
+  color: #dc2626;
+  margin-top: 6px;
+}
+
+.prediction-submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.prediction-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prediction-info-card {
+  background-color: #ffffff;
+  border: 1px solid #eef2f7;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.prediction-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.prediction-info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background-color: rgba(14, 165, 233, 0.1);
+  color: #0ea5e9;
+  font-size: 20px;
+  margin-bottom: 14px;
+}
+
+.prediction-info-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a1f36;
+  margin-bottom: 8px;
+}
+
+.prediction-info-text {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.prediction-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.prediction-tip svg {
+  color: #0284c7;
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.prediction-tip p {
+  font-size: 14px;
+  color: #1e40af;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .prediction-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prediction-form-card {
+    padding: 24px 20px;
+  }
+}
