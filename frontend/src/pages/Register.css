@@ -14,3 +14,9 @@
     gap: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 28px 18px;
+  }
+}

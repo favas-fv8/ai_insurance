@@ -126,3 +126,14 @@
     text-align: left;
   }
 }
+
+@media (max-width: 480px) {
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-links-list {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

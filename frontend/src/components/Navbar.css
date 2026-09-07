@@ -149,7 +149,30 @@
   padding: 6px;
 }
 
-@media (max-width: 860px) {
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .navbar-menu {
+    gap: 14px;
+  }
+
+  .navbar-links {
+    gap: 4px;
+  }
+
+  .navbar-auth {
+    gap: 6px;
+  }
+
+  .navbar-link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .navbar-user-name {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 1024px) {
   .navbar-toggle {
     display: block;
   }

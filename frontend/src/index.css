@@ -49,6 +49,18 @@ select {
   padding: 0 24px;
 }
 
+.table th,
+.table td {
+  white-space: normal;
+  word-break: break-word;
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
 .page {
   min-height: calc(100vh - 160px);
   padding: 48px 0 64px;
@@ -247,5 +259,25 @@ select {
 
   .container {
     padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 24px 0 40px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .btn {
+    padding: 11px 20px;
+    font-size: 14px;
   }
 }

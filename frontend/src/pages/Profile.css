@@ -115,3 +115,18 @@
     padding: 32px 24px;
   }
 }
+
+@media (max-width: 480px) {
+  .profile-sidebar {
+    padding: 24px 16px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-form-card {
+    padding: 20px 16px;
+    min-height: 0;
+  }
+}

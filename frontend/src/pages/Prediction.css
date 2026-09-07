@@ -210,3 +210,23 @@
     padding: 24px 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .prediction-tab {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+
+  .prediction-tab svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .prediction-form-card {
+    padding: 20px 16px;
+  }
+
+  .prediction-info-card {
+    padding: 20px 16px;
+  }
+}

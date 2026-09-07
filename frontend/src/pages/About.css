@@ -211,6 +211,12 @@
   margin-top: 2px;
 }
 
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 900px) {
   .steps-grid {
     grid-template-columns: 1fr;
@@ -223,5 +229,24 @@
   .best-model-banner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section-title {
+    font-size: 21px;
+  }
+
+  .about-paragraph {
+    font-size: 15px;
+  }
+
+  .step-card,
+  .tech-card {
+    padding: 24px 20px;
+  }
+
+  .best-model-banner {
+    padding: 20px;
   }
 }

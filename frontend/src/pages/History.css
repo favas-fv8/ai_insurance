@@ -47,7 +47,7 @@
 }
 
 .history-table-card {
-  overflow: hidden;
+  overflow-x: auto;
 }
 
 .table-card {
@@ -148,5 +148,16 @@
 @media (max-width: 768px) {
   .history-header {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .history-table-card .table th,
+  .history-table-card .table td {
+    padding: 12px 12px;
+  }
+
+  .empty-state {
+    padding: 48px 20px;
   }
 }

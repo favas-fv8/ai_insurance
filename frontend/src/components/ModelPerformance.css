@@ -468,3 +468,36 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .ai-summary-card {
+    padding: 14px 16px;
+  }
+
+  .ai-cm-card {
+    padding: 16px;
+  }
+
+  .cm {
+    gap: 6px;
+  }
+
+  .cm-cell {
+    padding: 8px 6px;
+    min-height: 48px;
+    min-width: 56px;
+  }
+
+  .ai-dataset-stats-list {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-performance-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ai-performance-actions .btn {
+    width: 100%;
+  }
+}

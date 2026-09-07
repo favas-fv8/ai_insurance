@@ -270,3 +270,34 @@
     margin-left: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .result-hero {
+    padding: 20px 16px;
+    gap: 14px;
+  }
+
+  .result-hero-title {
+    font-size: 20px;
+  }
+
+  .result-hero-text {
+    font-size: 14px;
+  }
+
+  .results-section-title {
+    font-size: 19px;
+  }
+
+  .result-summary-item {
+    padding: 14px 16px;
+  }
+
+  .results-actions {
+    flex-direction: column;
+  }
+
+  .results-actions .btn {
+    width: 100%;
+  }
+}
