@@ -1,5 +1,7 @@
 import os
 import sys
+from datetime import datetime
+
 import joblib
 import numpy as np
 import pandas as pd
@@ -78,7 +80,8 @@ class InsurancePredictionPipeline:
             'class_distribution': {
                 'purchased': int(y.sum()),
                 'not_purchased': int(len(y) - y.sum()),
-            }
+            },
+            'trained_at': datetime.now().isoformat(timespec='seconds'),
         }
 
         best_name = max(
@@ -103,7 +106,7 @@ class InsurancePredictionPipeline:
             pred = int(model.predict(features_scaled)[0])
             predictions[name] = {
                 'prediction': pred,
-                'label': 'Will Purchase' if pred == 1 else 'Will Not Purchase',
+                'label': 'Purchase' if pred == 1 else 'Not Purchase',
             }
 
         best_prediction = predictions[self.best_model_name]
@@ -160,6 +163,9 @@ class InsurancePredictionPipeline:
         return {
             'models': self.metrics['models'],
             'best_model': self.best_model_name,
+            'trained_at': self.metrics.get('trained_at'),
+            'feature_names': self.metrics.get('feature_names', []),
+            'class_distribution': self.metrics.get('class_distribution'),
             'training_info': {
                 'test_size': self.metrics['test_size'],
                 'train_size': self.metrics['train_size'],

@@ -76,7 +76,7 @@ const Home = () => {
     { icon: <FiDatabase />, label: 'Dataset Records', value: totalRecords !== null ? totalRecords.toLocaleString() : '400' },
     { icon: <FiLayers />, label: 'Features Used', value: featureCount !== null ? featureCount : '2' },
     { icon: <FiCpu />, label: 'ML Algorithms', value: algorithmCount },
-    { icon: <FiUsers />, label: 'Purchased', value: purchased !== null ? purchased.toLocaleString() : null },
+    { icon: <FiUsers />, label: 'Purchase', value: purchased !== null ? purchased.toLocaleString() : null },
     { icon: <FiTrendingUp />, label: 'Customers Analyzed', value: totalRecords !== null ? totalRecords.toLocaleString() : null },
   ].filter((stat) => stat.value !== null);
 
@@ -188,13 +188,13 @@ const Home = () => {
                 {purchased !== null && (
                   <div className="dataset-stat-item">
                     <span className="dataset-stat-value">{purchased.toLocaleString()}</span>
-                    <span className="dataset-stat-label">Purchased Insurance</span>
+                    <span className="dataset-stat-label">Purchase</span>
                   </div>
                 )}
                 {notPurchased !== null && (
                   <div className="dataset-stat-item">
                     <span className="dataset-stat-value">{notPurchased.toLocaleString()}</span>
-                    <span className="dataset-stat-label">Did Not Purchase</span>
+                    <span className="dataset-stat-label">Not Purchase</span>
                   </div>
                 )}
               </div>

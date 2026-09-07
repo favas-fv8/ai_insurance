@@ -226,7 +226,7 @@ const History = () => {
                         {purchased !== null ? (
                           <span className={`badge ${purchased ? 'badge-success' : 'badge-danger'}`}>
                             {purchased ? <FiCheckCircle /> : <FiXCircle />}
-                            {purchased ? 'Purchased' : 'Not Purchased'}
+                            {purchased ? 'Purchase' : 'Not Purchase'}
                           </span>
                         ) : (
                           <span className="muted">-</span>

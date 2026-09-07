@@ -286,7 +286,7 @@ const PredictionResults = () => {
             </div>
             <div>
               <h2 className="result-hero-title">
-                {displayPrediction ? 'Customer is likely to purchase' : 'Customer is unlikely to purchase'}
+                {displayPrediction ? 'Prediction: Purchase' : 'Prediction: Not Purchase'}
               </h2>
               <p className="result-hero-text">
                 {displayPrediction
@@ -300,7 +300,7 @@ const PredictionResults = () => {
               )}
             </div>
             <span className={`badge ${displayPrediction ? 'badge-success' : 'badge-danger'} result-hero-badge`}>
-              {displayPrediction ? 'Purchased' : 'Not Purchased'}
+              {displayPrediction ? 'Purchase' : 'Not Purchase'}
             </span>
           </div>
         )}
@@ -335,12 +335,12 @@ const PredictionResults = () => {
                         {modelPrediction ? (
                           <>
                             <FiCheckCircle />
-                            Purchased
+                            Purchase
                           </>
                         ) : (
                           <>
                             <FiXCircle />
-                            Not Purchased
+                            Not Purchase
                           </>
                         )}
                       </div>
