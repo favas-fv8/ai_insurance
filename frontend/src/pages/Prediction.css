@@ -4,43 +4,65 @@
 
 .prediction-tabs {
   display: flex;
-  gap: 8px;
-  background-color: #ffffff;
-  border: 1px solid #eef2f7;
-  border-radius: 12px;
-  padding: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.05);
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 4px;
+  padding: 4px;
+  background-color: #dbeafe;
+  border-radius: 15px;
+  box-shadow:
+    10px 10px 20px rgba(3, 105, 161, 0.28),
+    -10px -10px 20px rgba(255, 255, 255, 0.9);
   margin-bottom: 32px;
 }
 
 .prediction-tab {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   flex: 1;
-  padding: 12px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background-color: #dbeafe;
   border: none;
-  border-radius: 9px;
-  font-size: 15px;
-  font-weight: 600;
-  color: #64748b;
-  background-color: transparent;
+  border-radius: 10px;
+  box-shadow:
+    inset 5px 5px 5px rgba(2, 132, 199, 0.22),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.9);
+  color: #0c4a6e;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 3px;
+  padding: 10px 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
   transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .prediction-tab:hover {
-  color: #1a1f36;
-  background-color: #f8fafc;
+  box-shadow: none;
+  background-color: #0ea5e9;
+  color: #ffffff;
 }
 
 .prediction-tab svg {
-  font-size: 18px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  color: #0c4a6e;
+  transition: color 0.2s ease;
+}
+
+.prediction-tab:hover svg {
+  color: #ffffff;
 }
 
 .prediction-tab-active {
-  background-color: #0ea5e9;
+  background-color: #0284c7;
   color: #ffffff;
+  box-shadow: none;
 }
 
 .prediction-tab-active:hover {

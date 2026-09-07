@@ -48,9 +48,9 @@ const Login = () => {
   };
 
   return (
-    <div className="page auth-page">
+    <div className="page auth-page blue-auth-page">
       <div className="container auth-container">
-        <div className="auth-card card">
+        <div className="auth-card login-card blue-auth-card card">
           <div className="auth-header">
             <h1 className="auth-title">Welcome Back</h1>
             <p className="auth-subtitle">

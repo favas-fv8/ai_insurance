@@ -21,9 +21,11 @@ const Footer = () => {
 
         <div className="footer-links">
           <span className="footer-links-title">Quick Links</span>
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/predict">Predict</Link>
+          <div className="footer-links-list">
+            <Link to="/">Home</Link>
+            <Link to="/about">About</Link>
+            <Link to="/predict">Predict</Link>
+          </div>
         </div>
       </div>
 

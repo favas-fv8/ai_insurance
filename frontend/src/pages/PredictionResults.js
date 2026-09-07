@@ -212,10 +212,6 @@ const PredictionResults = () => {
       ? isPurchasedResult(bestModel.prediction)
       : null;
 
-  const hasMetrics = modelList.some(
-    (model) => model.accuracy !== null || model.precision !== null || model.recall !== null || model.f1 !== null
-  );
-
   const timestamp = result.created_at || result.timestamp || result.date || null;
 
   return (
@@ -348,44 +344,6 @@ const PredictionResults = () => {
                   </div>
                 );
               })}
-            </div>
-          </section>
-        )}
-
-        {hasMetrics && (
-          <section className="results-section">
-            <div className="results-section-header">
-              <h2 className="results-section-title">Model Performance</h2>
-              <p className="results-section-desc">
-                Evaluation metrics used to select the best model.
-              </p>
-            </div>
-            <div className="table-card">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Model</th>
-                    <th>Accuracy</th>
-                    <th>Precision</th>
-                    <th>Recall</th>
-                    <th>F1 Score</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {modelList.map((model) => (
-                    <tr key={model.name} className={model.isBest ? 'table-row-best' : ''}>
-                      <td className="table-model">
-                        {model.isBest && <FiAward className="trophy-icon" />}
-                        {model.name}
-                      </td>
-                      <td className="table-metric">{formatPercent(model.accuracy)}</td>
-                      <td className="table-metric">{formatPercent(model.precision)}</td>
-                      <td className="table-metric">{formatPercent(model.recall)}</td>
-                      <td className="table-metric">{formatPercent(model.f1)}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
             </div>
           </section>
         )}
