@@ -1,0 +1,35 @@
+# Render Blueprint — deploys the Django/ML API plus a PostgreSQL database.
+# Import this repo in Render (Blueprint) or create the service manually
+# using the same settings below. No secrets are stored in this file.
+services:
+  - type: web
+    name: ai-ipp-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: bash build.sh
+    preDeployCommand: python manage.py migrate && python manage.py train_models
+    startCommand: gunicorn ai_insurance.wsgi:application --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120
+    healthCheckPath: /healthz/
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.6"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_ALLOWED_HOSTS
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false
+      - key: CSRF_TRUSTED_ORIGINS
+        sync: false
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ai-ipp-db
+          property: connectionString
+
+databases:
+  - name: ai-ipp-db
+    databaseName: ai_ipp
+    plan: free

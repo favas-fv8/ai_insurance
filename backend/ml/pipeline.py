@@ -20,6 +20,8 @@ from sklearn.metrics import (
 MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'saved_models')
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 
+MODEL_FILES = ('models.pkl', 'scaler.pkl', 'metrics.pkl', 'best_model.pkl')
+
 
 class InsurancePredictionPipeline:
     def __init__(self):
@@ -127,6 +129,13 @@ class InsurancePredictionPipeline:
         joblib.dump(self.best_model_name, os.path.join(MODEL_DIR, 'best_model.pkl'))
 
     def load(self):
+        if not self.is_trained:
+            missing = [f for f in MODEL_FILES if not os.path.exists(os.path.join(MODEL_DIR, f))]
+            if missing:
+                # No saved models available (e.g., ephemeral deployment filesystem).
+                # Train on the bundled dataset so the API never 500s.
+                self.train()
+                return
         self.models = joblib.load(os.path.join(MODEL_DIR, 'models.pkl'))
         self.scaler = joblib.load(os.path.join(MODEL_DIR, 'scaler.pkl'))
         self.metrics = joblib.load(os.path.join(MODEL_DIR, 'metrics.pkl'))
