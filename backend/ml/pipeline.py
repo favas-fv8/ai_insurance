@@ -132,14 +132,21 @@ class InsurancePredictionPipeline:
         if not self.is_trained:
             missing = [f for f in MODEL_FILES if not os.path.exists(os.path.join(MODEL_DIR, f))]
             if missing:
-                # No saved models available (e.g., ephemeral deployment filesystem).
-                # Train on the bundled dataset so the API never 500s.
+                # No saved models available (e.g., fresh deployment before the
+                # startup `train_models` run). Train once from the bundled
+                # dataset so the API never 500s.
                 self.train()
                 return
-        self.models = joblib.load(os.path.join(MODEL_DIR, 'models.pkl'))
-        self.scaler = joblib.load(os.path.join(MODEL_DIR, 'scaler.pkl'))
-        self.metrics = joblib.load(os.path.join(MODEL_DIR, 'metrics.pkl'))
-        self.best_model_name = joblib.load(os.path.join(MODEL_DIR, 'best_model.pkl'))
+            try:
+                self.models = joblib.load(os.path.join(MODEL_DIR, 'models.pkl'))
+                self.scaler = joblib.load(os.path.join(MODEL_DIR, 'scaler.pkl'))
+                self.metrics = joblib.load(os.path.join(MODEL_DIR, 'metrics.pkl'))
+                self.best_model_name = joblib.load(os.path.join(MODEL_DIR, 'best_model.pkl'))
+            except (OSError, EOFError, ValueError, AttributeError, ModuleNotFoundError):
+                # Saved models are corrupt or incompatible (e.g. scikit-learn
+                # version changed). Re-train once from the bundled dataset.
+                self.train()
+                return
         self.is_trained = True
 
     def get_dataset_info(self):
