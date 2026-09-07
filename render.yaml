@@ -8,7 +8,6 @@ services:
     rootDir: backend
     plan: free
     buildCommand: bash build.sh
-    preDeployCommand: python manage.py migrate && python manage.py train_models
     startCommand: gunicorn ai_insurance.wsgi:application --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 120
     healthCheckPath: /healthz/
     envVars:
