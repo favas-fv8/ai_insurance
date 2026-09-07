@@ -68,12 +68,6 @@ const Navbar = () => {
           <div className="navbar-auth">
             {isAuthenticated ? (
               <>
-                <span className="navbar-user">
-                  <FiUser />
-                  <span className="navbar-user-name">
-                    {user ? user.username || user.first_name || 'Account' : 'Account'}
-                  </span>
-                </span>
                 <NavLink
                   to="/history"
                   className={({ isActive }) =>
@@ -83,8 +77,11 @@ const Navbar = () => {
                 >
                   History
                 </NavLink>
-                <Link to="/profile" className="btn btn-sm btn-outline" onClick={closeMenu}>
-                  Profile
+                <Link to="/profile" className="navbar-user" onClick={closeMenu}>
+                  <FiUser />
+                  <span className="navbar-user-name">
+                    {user ? user.username || user.first_name || 'Account' : 'Account'}
+                  </span>
                 </Link>
                 <button
                   className="btn btn-sm btn-danger navbar-logout"
@@ -96,7 +93,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <Link to="/login" className="btn btn-sm btn-outline" onClick={closeMenu}>
+                <Link to="/login" className="btn btn-sm btn-outline navbar-login" onClick={closeMenu}>
                   Login
                 </Link>
                 <Link to="/register" className="btn btn-sm btn-primary" onClick={closeMenu}>
