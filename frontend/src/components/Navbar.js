@@ -96,7 +96,7 @@ const Navbar = () => {
                 <Link to="/login" className="btn btn-sm btn-outline navbar-login" onClick={closeMenu}>
                   Login
                 </Link>
-                <Link to="/register" className="btn btn-sm btn-primary" onClick={closeMenu}>
+                <Link to="/register" className="btn btn-sm btn-primary navbar-register" onClick={closeMenu}>
                   Register
                 </Link>
               </>

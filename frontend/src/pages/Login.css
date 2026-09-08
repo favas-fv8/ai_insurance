@@ -5,8 +5,8 @@
 
 .auth-container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
   flex: 1;
 }
 
@@ -51,6 +51,24 @@
     -10px -10px 24px rgba(255, 255, 255, 0.95),
     inset 2px 2px 4px rgba(255, 255, 255, 0.9),
     inset -3px -3px 8px rgba(148, 163, 184, 0.4);
+}
+
+.login-card.blue-auth-card.has-error {
+  border-color: rgba(220, 38, 38, 0.6);
+  box-shadow:
+    0 0 0 4px rgba(220, 38, 38, 0.12),
+    0 0 24px 6px rgba(220, 38, 38, 0.35),
+    12px 12px 28px rgba(185, 28, 28, 0.3),
+    -8px -8px 20px rgba(255, 255, 255, 0.9);
+}
+
+.login-card.blue-auth-card.has-error:hover {
+  border-color: rgba(220, 38, 38, 0.75);
+  box-shadow:
+    0 0 0 4px rgba(220, 38, 38, 0.16),
+    0 0 30px 8px rgba(220, 38, 38, 0.45),
+    14px 14px 32px rgba(185, 28, 28, 0.36),
+    -10px -10px 24px rgba(255, 255, 255, 0.95);
 }
 
 .blue-auth-card::before {
@@ -152,14 +170,28 @@
   color: #64748b;
 }
 
-.auth-alert {
+.login-error-alert {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 8px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 10px 16px;
+  margin-bottom: 16px;
+  color: #b91c1c;
+  font-size: 13px;
 }
 
-.auth-alert svg {
+.login-error-alert svg {
   flex-shrink: 0;
+}
+
+.login-error-alert span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .auth-submit {

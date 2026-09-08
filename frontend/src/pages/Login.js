@@ -50,20 +50,19 @@ const Login = () => {
   return (
     <div className="page auth-page blue-auth-page">
       <div className="container auth-container">
-        <div className="auth-card login-card blue-auth-card card">
+        {error && (
+          <div className="login-error-alert" title={error}>
+            <FiAlertCircle />
+            <span>{error}</span>
+          </div>
+        )}
+        <div className={`auth-card login-card blue-auth-card card${error ? ' has-error' : ''}`}>
           <div className="auth-header">
             <h1 className="auth-title">Welcome Back</h1>
             <p className="auth-subtitle">
               Sign in to access predictions and your history.
             </p>
           </div>
-
-          {error && (
-            <div className="alert alert-error auth-alert">
-              <FiAlertCircle />
-              <span>{error}</span>
-            </div>
-          )}
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
