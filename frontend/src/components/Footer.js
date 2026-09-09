@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiActivity, FiHeart } from 'react-icons/fi';
+import { FiActivity } from 'react-icons/fi';
+import version from '../version';
 import './Footer.css';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
-
   return (
     <footer className="footer">
       <div className="container footer-inner">
@@ -31,12 +30,8 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
-          <p>
-            &copy; {year} {process.env.REACT_APP_NAME || 'Ai-IPP'} - AI Insurance Purchase Prediction. All rights reserved.
-          </p>
-          <p className="footer-made">
-            Built with <FiHeart /> using Python, Django, React and scikit-learn
-          </p>
+          <p>&copy; {new Date().getFullYear()} Ai-IPP</p>
+          <p className="footer-version">Version {version}</p>
         </div>
       </div>
     </footer>
