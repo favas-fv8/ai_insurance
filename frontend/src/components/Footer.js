@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiActivity } from 'react-icons/fi';
 import version from '../version';
 import './Footer.css';
 
@@ -11,7 +10,7 @@ const Footer = () => {
         <div className="footer-brand">
           <div className="footer-brand-title">
             <span className="footer-brand-icon">
-              <FiActivity />
+              <img src={`${process.env.PUBLIC_URL}/hero.png`} alt="Ai-IPP" />
             </span>
             Ai-IPP
           </div>

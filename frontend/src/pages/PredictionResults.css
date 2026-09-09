@@ -17,6 +17,10 @@
   align-items: center;
 }
 
+.results-actions .btn-primary:hover:not(:disabled) {
+  color: #000000;
+}
+
 .results-summary {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

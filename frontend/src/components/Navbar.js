@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiLogOut, FiUser, FiActivity } from 'react-icons/fi';
+import { FiMenu, FiX, FiLogOut, FiUser } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
 import './Navbar.css';
 
@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="container navbar-inner">
         <Link to="/" className="navbar-brand" onClick={closeMenu}>
           <span className="navbar-brand-icon">
-            <FiActivity />
+            <img src={`${process.env.PUBLIC_URL}/hero.png`} alt="Ai-IPP" />
           </span>
           <span className="navbar-brand-text">
             Ai-IPP

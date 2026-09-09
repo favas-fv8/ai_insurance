@@ -7,6 +7,10 @@
   flex-wrap: wrap;
 }
 
+.history-header .btn-primary:hover:not(:disabled) {
+  color: #000000;
+}
+
 .empty-state {
   display: flex;
   flex-direction: column;

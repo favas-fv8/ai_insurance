@@ -82,7 +82,15 @@ const Home = () => {
 
   return (
     <div>
-      <section className="hero">
+      <section
+        className="hero"
+        style={{
+          backgroundImage: `linear-gradient(rgba(26, 31, 54, 0.85), rgba(26, 31, 54, 0.85)), url(${process.env.PUBLIC_URL}/herosection.jpg)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
         <div className="container hero-inner">
           <div className="hero-badge">
             <span className="hero-badge-dot"></span>
