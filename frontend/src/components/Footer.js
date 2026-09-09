@@ -9,9 +9,11 @@ const Footer = () => {
       <div className="container footer-inner">
         <div className="footer-brand">
           <div className="footer-brand-title">
-            <span className="footer-brand-icon">
-              <img src={`${process.env.PUBLIC_URL}/hero.png`} alt="Ai-IPP" />
-            </span>
+            <Link to="/" className="footer-brand-link" aria-label="Ai-IPP home">
+              <span className="footer-brand-icon">
+                <img src={`${process.env.PUBLIC_URL}/hero.png`} alt="" />
+              </span>
+            </Link>
             Ai-IPP
           </div>
           <p className="footer-tagline">AI Insurance Purchase Prediction using 5 machine learning algorithms.</p>

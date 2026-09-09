@@ -29,6 +29,16 @@
   white-space: nowrap;
 }
 
+.footer-brand-link {
+  display: inline-flex;
+  line-height: 0;
+  transition: opacity 0.2s ease;
+}
+
+.footer-brand-link:hover {
+  opacity: 0.85;
+}
+
 .footer-brand-icon {
   display: flex;
   align-items: center;
