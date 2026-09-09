@@ -29,6 +29,15 @@ const Profile = () => {
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
+    if (!success && !error) return;
+    const timer = setTimeout(() => {
+      setSuccess(null);
+      setError(null);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [success, error]);
+
+  useEffect(() => {
     let mounted = true;
     userService
       .getProfile()
