@@ -11,9 +11,6 @@
 # production
 /build
 
-# auto-generated app version (regenerated from git tag on every build)
-/src/version.js
-
 # misc
 .DS_Store
 .env.local
