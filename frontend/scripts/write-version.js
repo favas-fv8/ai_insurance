@@ -15,11 +15,13 @@ function runGit(args) {
 }
 
 function resolveVersion() {
+  const envVersion = process.env.REACT_APP_VERSION;
+  if (envVersion) return envVersion.replace(/^v/i, '');
   const described = runGit('describe --tags --abbrev=0');
   if (described) return described.replace(/^v/i, '');
   const latest = runGit('tag --sort=-v:refname');
   if (latest) return latest.split(/\r?\n/)[0].replace(/^v/i, '');
-  return process.env.REACT_APP_VERSION || '1.0.0';
+  return '1.0.0';
 }
 
 const version = resolveVersion();
