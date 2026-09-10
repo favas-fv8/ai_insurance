@@ -67,3 +67,6 @@ coverage.xml
 # Misc
 *.bak
 *.tmp
+
+.vercel
+.env*
