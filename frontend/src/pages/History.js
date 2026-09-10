@@ -103,6 +103,7 @@ const History = () => {
   const [error, setError] = useState(null);
   const [deletingId, setDeletingId] = useState(null);
   const [confirmId, setConfirmId] = useState(null);
+  const [visibleCount, setVisibleCount] = useState(20);
 
   const loadHistory = useCallback(() => {
     setLoading(true);
@@ -151,6 +152,8 @@ const History = () => {
       return 0;
     });
 
+  const visibleHistory = sortedHistory.slice(0, visibleCount);
+
   return (
     <div className="page">
       <div className="container">
@@ -189,6 +192,7 @@ const History = () => {
             <table className="table history-table">
               <thead>
                 <tr>
+                  <th>#</th>
                   <th>Date &amp; Time</th>
                   <th>Age</th>
                   <th>Estimated Salary</th>
@@ -198,7 +202,7 @@ const History = () => {
                 </tr>
               </thead>
               <tbody>
-                {sortedHistory.map(({ entry, time }) => {
+                {visibleHistory.map(({ entry, time }, index) => {
                   const id = getId(entry);
                   const age = getAge(entry);
                   const salary = getSalary(entry);
@@ -210,6 +214,7 @@ const History = () => {
 
                   return (
                     <tr key={id !== null ? id : `${age}-${salary}-${timeString}`}>
+                      <td className="history-index">{index + 1}</td>
                       <td className="history-date">
                         <FiClock className="history-date-icon" />
                         {timeString}
@@ -268,6 +273,16 @@ const History = () => {
                 })}
               </tbody>
             </table>
+            {visibleCount < sortedHistory.length && (
+              <div className="history-show-more">
+                <button
+                  className="btn btn-primary btn-sm history-show-more-btn"
+                  onClick={() => setVisibleCount((count) => count + 20)}
+                >
+                  Show More
+                </button>
+              </div>
+            )}
           </div>
         )}
       </div>

@@ -95,6 +95,12 @@
   background-color: #f8fafc;
 }
 
+.history-index {
+  color: #64748b;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
 .history-date {
   white-space: nowrap;
   color: #475569;
@@ -147,6 +153,12 @@
   background-color: #fee2e2;
   color: #dc2626;
   border-color: #fecaca;
+}
+
+.history-show-more {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
 }
 
 @media (max-width: 768px) {
